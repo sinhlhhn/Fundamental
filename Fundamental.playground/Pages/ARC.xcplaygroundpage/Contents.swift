@@ -17,7 +17,7 @@ func addClassToArray(_ ref: Reference) {
 }
 
 // start = 1
-var ref1 = Reference(name: "1") // +1
+var ref1 = Reference() // +1
 var ref2 = ref1 // +1
 
 CFGetRetainCount(ref1) // 3
