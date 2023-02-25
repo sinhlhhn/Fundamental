@@ -28,3 +28,21 @@ addClassToArray(ref1) // +1
 
 CFGetRetainCount(ref1) // 5
 CFGetRetainCount(ref2) // 5
+
+
+func unexpectedResult() {
+    // start = 1
+    var ref1 = Reference()
+    var ref2 = ref1
+
+    CFGetRetainCount(ref1) // 8
+    CFGetRetainCount(ref2) // 7
+
+    addClassToArray(ref1)
+    addClassToArray(ref1)
+
+    CFGetRetainCount(ref1) // 6
+    CFGetRetainCount(ref2) // 5
+}
+
+unexpectedResult()
