@@ -1,5 +1,7 @@
 import Foundation
 
+// retain count when init, assign or pass as an argument to a function
+
 class Reference {
     var name: String
     
