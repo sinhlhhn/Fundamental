@@ -14,14 +14,15 @@ func addClassToArray(_ ref: Reference) {
     classArray.append(ref)
 }
 
-var ref1 = Reference(name: "1")
-var ref2 = ref1
+// start = 1
+var ref1 = Reference(name: "1") // +1
+var ref2 = ref1 // +1
 
-CFGetRetainCount(ref1)
-CFGetRetainCount(ref2)
+CFGetRetainCount(ref1) // 3
+CFGetRetainCount(ref2) // 3
 
-addClassToArray(ref1)
-addClassToArray(ref1)
+addClassToArray(ref1) // +1
+addClassToArray(ref1) // +1
 
-CFGetRetainCount(ref1)
-CFGetRetainCount(ref2)
+CFGetRetainCount(ref1) // 5
+CFGetRetainCount(ref2) // 5
